@@ -1,4 +1,4 @@
-from ..spells import *
+from ..necro_spells import *
 from search_code.most_valuable_item import getMostValuable
 from ..necro_combat_fns import *
 

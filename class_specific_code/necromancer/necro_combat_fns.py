@@ -1,5 +1,7 @@
 from ..combat_fns import *
-def killThem(banned_enemy_types=['door']):
+
+
+def killThem(move_to_corpses=True, banned_enemy_types=['door']):
     enemy = findNearestEnemy(banned_enemy_types=banned_enemy_types)
     if not enemy:
         return
@@ -9,9 +11,10 @@ def killThem(banned_enemy_types=['door']):
         if hero.canCast("fear", enemy) and distance < 10:
             hero.cast("fear", enemy)
 
-        # drainLife()
+        devour()
+        drainLife()
         lightingBolt()
-        raiseTheDead()
+        raiseTheDead(move_to_corpses=move_to_corpses)
 
         if enemy:
             hero.attack(enemy)
