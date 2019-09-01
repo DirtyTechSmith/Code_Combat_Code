@@ -1,4 +1,30 @@
-from hero_base import hero
+# if False:
+#     from hero_base import hero
+
+def findNearestEnemy(banned_enemy_types=['door']):
+    enemies = findEnemies(banned_enemy_types=banned_enemy_types)
+    nearest_enemy = None
+    closest_dist = float('inf')
+    for enemy in enemies:
+        distance = hero.distanceTo(enemy)
+        if distance < closest_dist:
+            closest_dist = distance
+            nearest_enemy = enemy
+
+    return nearest_enemy
+
+
+def findEnemies(banned_enemy_types=['door']):
+    enemies = hero.findEnemies()
+    bad_guys = []
+    for enemy in enemies:
+        if not enemy:
+            continue
+        if enemy.type in banned_enemy_types:
+            continue
+        bad_guys.append(enemy)
+
+    return bad_guys
 
 
 def lightingBolt(banned_enemy_types=['door', 'chest'], enemy=None, farthest=True):
@@ -28,6 +54,7 @@ def lightingBolt(banned_enemy_types=['door', 'chest'], enemy=None, farthest=True
 
     if enemy is None:
         return False
+
     if not hero.canCast('lightning-bolt', enemy):
         return
 
@@ -103,11 +130,7 @@ def devour(banned_enemy_types=['door', 'chest']):
     hero.cast("devour", enemy)
 
 
-def sacrifice(target_1=None, target_2=hero, health_threshold=.5):
-    health_percent = hero.health / hero.maxHealth
-    if health_percent > health_threshold:
-        return
-
+def sacrifice(target_1=None, target_2=hero):
     spell_string = 'sacrifice'
     spell_range = 20
     if target_1 is None:
@@ -170,8 +193,6 @@ def summonUndead(soul_link=True, sacrifice_on_low_health=True):
 
     hero.cast(spell_string)
 
-    if not soul
-
     skeletons = hero.findByType('skeleton', hero.findFriends())
     if not skeletons:
         return
@@ -186,3 +207,33 @@ def summonUndead(soul_link=True, sacrifice_on_low_health=True):
 
         if soul_link:
             soulLink(target_1=skeleton)
+
+
+def killThem(move_to_corpses=True, banned_enemy_types=['door']):
+    enemy = findNearestEnemy(banned_enemy_types=banned_enemy_types)
+    if not enemy:
+        return
+
+    while enemy:
+        distance = hero.distanceTo(enemy)
+        if hero.canCast("fear", enemy) and distance < 10:
+            hero.cast("fear", enemy)
+
+        sacrifice()
+        soulLink()
+        summonUndead()
+        devour()
+        drainLife()
+        lightingBolt()
+        raiseTheDead(move_to_corpses=move_to_corpses)
+
+        if enemy:
+            hero.attack(enemy)
+
+        enemy = findNearestEnemy(banned_enemy_types=banned_enemy_types)
+
+
+target_pos = Vector(40, 33)
+while True:
+    killThem()
+    hero.move(target_pos)

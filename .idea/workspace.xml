@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92a8a4c7-c4a3-4479-9717-c0eda4ee4e81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/class_specific_code/necromancer/levels/hold_for_reinforcements.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/class_specific_code/necromancer/levels/ogre_encampment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/class_specific_code/necromancer/levels/tomb_raider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/class_specific_code/necromancer/levels/village_gaurd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/missing_python_libs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/missing_python_libs/math.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class_specific_code/necromancer/levels/crossroads.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class_specific_code/necromancer/levels/hold_the_forest_pass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class_specific_code/necromancer/levels/sarven_road.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Code_Combat_Code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Code_Combat_Code.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_specific_code/necromancer/multiplayer_levels/multiplayer_treasure_grove.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_specific_code/necromancer/multiplayer_levels/multiplayer_treasure_grove.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class_specific_code/hero.py" beforeDir="false" afterPath="$PROJECT_DIR$/hero_base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class_specific_code/necromancer/necro_combat_fns.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_specific_code/necromancer/necro_combat_fns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_specific_code/necromancer/spells.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_specific_code/necromancer/necro_spells.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_specific_code/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_specific_code/testing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class_specific_code/necromancer/necro_spells.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_specific_code/necromancer/necro_spells.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +34,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

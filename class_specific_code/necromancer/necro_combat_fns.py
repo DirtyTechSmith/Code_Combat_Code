@@ -1,4 +1,5 @@
 from ..combat_fns import *
+from ..necromancer.necro_spells import *
 
 
 def killThem(move_to_corpses=True, banned_enemy_types=['door']):
@@ -10,7 +11,9 @@ def killThem(move_to_corpses=True, banned_enemy_types=['door']):
         distance = hero.distanceTo(enemy)
         if hero.canCast("fear", enemy) and distance < 10:
             hero.cast("fear", enemy)
-
+        sacrifice()
+        soulLink()
+        summonUndead()
         devour()
         drainLife()
         lightingBolt()
