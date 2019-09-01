@@ -1,9 +1,12 @@
-def getMostValuable(close_distance = 10):
+def getMostValuable(close_distance=10):
     items = hero.findItems()
     item_values = [item.value for item in items]
     best_item = max(item_values)
     # hero.say(best_item)
     nearest_item = hero.findNearestItem()
+    if not nearest_item:
+        return
+
     if nearest_item.value == best_item:
         distance = hero.distanceTo(nearest_item)
         if distance <= close_distance:
@@ -11,7 +14,7 @@ def getMostValuable(close_distance = 10):
         else:
             hero.move(nearest_item.pos)
 
-        continue
+        return
 
     nearest_distance = hero.distanceTo(nearest_item)
     value_distance = nearest_item.value / nearest_distance
@@ -28,7 +31,7 @@ def getMostValuable(close_distance = 10):
             value_distance = current_value_distance
 
     if not nearest_item:
-        continue
+        return
 
     # hero.say(value_distance)
     hero.move(nearest_item.pos)
